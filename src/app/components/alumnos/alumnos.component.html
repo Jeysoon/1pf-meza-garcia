@@ -1,0 +1,15 @@
+<h2 style="text-align: center; font-size: 2rem;">Alumnos</h2>
+<!-- <ul style="height: 50%; overflow: scroll">
+  <li class="alumno-container" *ngFor="let alumno of alumnos$ | async">
+    Nombre : {{alumno.nombre}}
+
+  </li>
+</ul> -->
+<div class="students">
+  <div *ngFor="let alumno of alumnos$ | async" class="student-card">
+  <app-alumno
+  style="padding: 3rem;"
+  [datos]="alumno"
+  ></app-alumno>
+  </div>
+</div>

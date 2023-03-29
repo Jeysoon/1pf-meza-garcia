@@ -1,0 +1,7 @@
+ <div style="display: flex; justify-content: center;">
+   <img class="student-card-img" [src]="alumno.fotografia" [alt]="alumno.nombre" width="64" height="64">
+ </div>
+ <h3>Nombre: {{ alumno.nombre }}</h3>
+ <p>Ingreso: {{ alumno.fechaIngreso | date}}</p>
+ <p *ngIf="alumno.experiencia > 4">Años de experiencia: {{alumno.experiencia}} </p>
+ <p class="enrollment" [ngClass]="{ 'inscrito': alumno.inscrito}" appRoundBlock>Inscrito: {{ alumno.inscrito ? 'Sí' : 'No' }}</p>
