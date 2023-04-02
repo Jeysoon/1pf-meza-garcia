@@ -1,3 +1,43 @@
-<p>
-  crear-alumno works!
-</p>
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="crearAlumno" (ngSubmit)="routeData ? onUpdateStudent() :  onCreateStudent()">
+      <div class="form-group">
+        <label for="username">nombre:</label>
+        <input formControlName="nombre" type="text" class="form-control" id="username">
+        <div *ngIf="crearAlumno.controls['nombre'].errors?.['required'] && crearAlumno.controls['nombre'].touched" class="invalido">El campo nombre no puede ser vacio</div>
+      </div>
+      <div class="form-group">
+        <label for="apellido">apellido:</label>
+        <input formControlName="apellido" type="text" class="form-control" id="username">
+        <div *ngIf="crearAlumno.controls['apellido'].errors?.['required'] && crearAlumno.controls['apellido'].touched" class="invalido">El campo nombre no puede ser vacio</div>
+      </div>
+      <div class="form-group">
+        <label for="fotografia">Link a una fotografia:</label>
+        <input formControlName="fotografia" type="text" class="form-control" id="fotografia">
+        <div *ngIf="crearAlumno.controls['fotografia'].errors?.['required'] && crearAlumno.controls['fotografia'].touched " class="invalido">Campo no puede estar vacio</div>
+      </div>
+      <div class="form-group">
+        <label for="inscrito">Inscrito:</label>
+        <select formControlName="inscrito">
+          <option value="false" selected>False</option>
+          <option value="true">True</option>
+        </select>
+        <div *ngIf="crearAlumno.controls['inscrito'].errors?.['required'] && crearAlumno.controls['inscrito'].touched " class="invalido">Campo no puede estar vacio</div>
+      </div>
+      <div class="form-group">
+        <label for="inscrito">Experiencia:</label>
+        <input formControlName="experiencia" type="number" class="form-control" id="experiencia">
+        <div *ngIf="crearAlumno.controls['experiencia'].errors?.['required'] && crearAlumno.controls['experiencia'].touched " class="invalido">Campo experiencia no puede estar vacio</div>
+      </div>
+      <div class="form-group">
+        <label for="inscrito">Fecha de Ingreso:</label>
+        <input formControlName="fechaIngreso" type="date" class="form-control" id="fechaIngreso">
+        <div *ngIf="crearAlumno.controls['fechaIngreso'].errors?.['required'] && crearAlumno.controls['fechaIngreso'].touched " class="invalido">Campo fecha de ingreso no puede estar vacio</div>
+      </div>
+      <button *ngIf="!routeData" [disabled]="crearAlumno.status !== 'VALID'" type="submit" [ngClass]="crearAlumno.status === 'VALID' ? 'btn btn-primary' : 'btn btn-secondary'">Submit</button>
+      <button *ngIf="routeData" [disabled]="crearAlumno.status !== 'VALID'" type="submit" [ngClass]="crearAlumno.status === 'VALID' ? 'btn btn-primary' : 'btn btn-primary'">Update</button>
+    </form>
+
+  </mat-card-content>
+</mat-card>
+

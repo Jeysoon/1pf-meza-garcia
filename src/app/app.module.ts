@@ -11,6 +11,8 @@ import { WatchBooleanPipe } from './pipes/watch-boolean.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { AlumnoComponent } from './components/alumno/alumno.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CompleteNamePipe } from './pipes/complete-name.pipe';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
       WatchBooleanPipe,
       AlumnosComponent,
       AlumnoComponent,
+      CompleteNamePipe
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

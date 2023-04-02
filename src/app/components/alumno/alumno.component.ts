@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Alumno } from 'src/app/services/alumnos.service';
 
 @Component({
@@ -7,11 +8,7 @@ import { Alumno } from 'src/app/services/alumnos.service';
   styleUrls: ['./alumno.component.css'],
 })
 export class AlumnoComponent implements OnInit {
-  constructor() {}
-  // <img [src]="alumno.fotografia" [alt]="alumno.nombre" width="64" height="64">
-  // <h3>{{ alumno.nombre }}</h3>
-  // <p>{{ alumno.fechaIngreso | date}}</p>
-  // <p class="enrollment">Inscrito: {{ alumno.inscrito ? 'Sí' : 'No' }}</p>
+  constructor(private router: Router) {}
   _alumno!: Alumno;
   @Input('datos') set datos(val: Alumno) {
     this._alumno = val;
@@ -20,4 +17,7 @@ export class AlumnoComponent implements OnInit {
     return this._alumno;
   }
   ngOnInit() {}
+  onEdit(alumno: Alumno){
+this.router.navigate(['/crear'], {state: { data: alumno}});
+  }
 }
