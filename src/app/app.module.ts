@@ -13,6 +13,7 @@ import { AlumnoComponent } from './components/alumno/alumno.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompleteNamePipe } from './pipes/complete-name.pipe';
+import { DefaultFontHeaderDirective } from './directives/defaultFontHeader.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CompleteNamePipe } from './pipes/complete-name.pipe';
       WatchBooleanPipe,
       AlumnosComponent,
       AlumnoComponent,
-      CompleteNamePipe
+      CompleteNamePipe,
+      DefaultFontHeaderDirective
    ],
   imports: [
     BrowserModule,

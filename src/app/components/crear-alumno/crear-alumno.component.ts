@@ -14,7 +14,8 @@ export class CrearAlumnoComponent implements OnInit {
   constructor(
     private alumnoService: AlumnosService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute
+  ) {
     const controles: any = {
       nombre: new FormControl('', [Validators.required]),
       apellido: new FormControl('', Validators.required),
@@ -27,11 +28,11 @@ export class CrearAlumnoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       // Get the static data from the state object
       this.routeData = window.history.state.data;
-      if(this.routeData){
-        this.crearAlumno.patchValue(this.routeData)
+      if (this.routeData) {
+        this.crearAlumno.patchValue(this.routeData);
       } else {
         this.crearAlumno.reset();
       }
@@ -39,39 +40,25 @@ export class CrearAlumnoComponent implements OnInit {
   }
   onCreateStudent() {
     const outputDateString = new Date(this.crearAlumno.value.fechaIngreso);
-//     const min = 1;
-// const max = 100;
-// const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-const randomNumber = Math.floor(Math.random() * 9000) + 1000;
+    const randomNumber = Math.floor(Math.random() * 9000) + 1000;
 
     const payload = {
       ...this.crearAlumno.value,
       fechaIngreso: outputDateString.toISOString(),
-      id: randomNumber
+      id: randomNumber,
     };
 
-      this.alumnoService.create(payload).subscribe(() => {
-        console.log('Alumno creado!');
-        this.router.navigate(['/todos']);
-      });
-  }
-  onUpdateStudent(){
-    const updatePayload = {
-      ...this.crearAlumno.value,
-      id: this.routeData?.id
-    };
-    console.log('updatePayload', updatePayload);
-    this.alumnoService.update(updatePayload).subscribe(() =>{
+    this.alumnoService.create(payload).subscribe(() => {
       this.router.navigate(['/todos']);
     });
   }
-  onTest() {
-    // const myDate = new Date(this.crearAlumno.value.fechaIngreso);
-    // console.log(myDate.toISOString())
-  }
-  onDelete() {
-    // this.alumnoService.delete(47).subscribe((data) => {
-    //   console.log('request made', data);
-    // });
+  onUpdateStudent() {
+    const updatePayload = {
+      ...this.crearAlumno.value,
+      id: this.routeData?.id,
+    };
+    this.alumnoService.update(updatePayload).subscribe(() => {
+      this.router.navigate(['/todos']);
+    });
   }
 }
