@@ -5,8 +5,8 @@
       "apellido": "kolzcack",
       "fotografia": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/279.jpg",
       "inscrito": true,
-      "experiencia": "7",
-      "fechaIngreso": "2023-03-24",
+      "experiencia": 12,
+      "fechaIngreso": "2023-03-26",
       "id": "1"
     },
     {
@@ -414,22 +414,22 @@
       "id": "46"
     },
     {
-      "fechaIngreso": "2023-03-25T18:00:46.314Z",
       "nombre": "Alexis",
       "apellido": "Haley III",
       "fotografia": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg",
-      "inscrito": true,
-      "experiencia": "1",
+      "inscrito": "false",
+      "experiencia": 12,
+      "fechaIngreso": "2023-03-25",
       "id": "48"
     },
     {
-      "nombre": "Barco",
-      "apellido": "basurero",
-      "fotografia": "https://cdn.pixabay.com/photo/2016/05/02/10/13/ship-1366926_1280.jpg",
-      "inscrito": false,
-      "experiencia": 666,
-      "fechaIngreso": "2023-04-25",
-      "id": 6750
+      "nombre": "Nataly ",
+      "apellido": "Russell",
+      "fotografia": "https://pbs.twimg.com/profile_images/1517503065129209858/w8HZEYtG_400x400.jpg",
+      "inscrito": "true",
+      "experiencia": 5,
+      "fechaIngreso": "2023-04-19T00:00:00.000Z",
+      "id": 5338
     }
   ]
 }

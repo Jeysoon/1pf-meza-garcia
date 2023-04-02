@@ -39,7 +39,7 @@
     <!-- Experiencia Column -->
     <ng-container matColumnDef="inscrito">
       <th mat-header-cell *matHeaderCellDef> Inscrito </th>
-      <td mat-cell *matCellDef="let element" style="font-weight: 700;" [ngStyle]="{'color': element.inscrito ? 'green' : 'red'}"> {{element.inscrito}} </td>
+      <td mat-cell *matCellDef="let element" style="font-weight: 700;" [ngStyle]="{'color': element.inscrito === 'true' ? 'green' : 'red'}"> {{element.inscrito}} </td>
     </ng-container>
     <ng-container matColumnDef="experiencia">
       <th mat-header-cell *matHeaderCellDef> Experiencia </th>
