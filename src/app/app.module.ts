@@ -14,6 +14,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompleteNamePipe } from './pipes/complete-name.pipe';
 import { DefaultFontHeaderDirective } from './directives/defaultFontHeader.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DefaultFontHeaderDirective } from './directives/defaultFontHeader.direc
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,6 +20,10 @@ export class AlumnosService {
 
 constructor(private http: HttpClient) { }
 
+showEditSuccess = false;
+showCreateSuccess = false;
+showDeleteSuccess = false;
+
 traerAlumnos(){
   return this.http.get<Alumno[]>(environment.baseUrl);
 }
@@ -56,7 +60,7 @@ delete(id: number) {
           'Content-Type': 'application/json'
         })
       };
-  return this.http.delete(`${environment.baseUrl}/${id}`, {headers: httpOptions.headers}).subscribe();
+  return this.http.delete(`${environment.baseUrl}/${id}`, {headers: httpOptions.headers});
 }
 
 }

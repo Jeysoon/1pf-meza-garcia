@@ -49,6 +49,7 @@ export class CrearAlumnoComponent implements OnInit {
     };
 
     this.alumnoService.create(payload).subscribe(() => {
+      this.alumnoService.showCreateSuccess = true;
       this.router.navigate(['/todos']);
     });
   }
@@ -58,6 +59,7 @@ export class CrearAlumnoComponent implements OnInit {
       id: this.routeData?.id,
     };
     this.alumnoService.update(updatePayload).subscribe(() => {
+      this.alumnoService.showEditSuccess = true;
       this.router.navigate(['/todos']);
     });
   }

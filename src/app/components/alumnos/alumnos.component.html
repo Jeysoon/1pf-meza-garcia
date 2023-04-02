@@ -1,10 +1,8 @@
 <h2 style="text-align: center;" appDefaultFontHeader >Alumnos</h2>
-<!-- <ul style="height: 50%; overflow: scroll">
-  <li class="alumno-container" *ngFor="let alumno of alumnos$ | async">
-    Nombre : {{alumno.nombre}}
+<ngb-alert *ngIf="showEditSuccess" [type]="'success'" (closed)="updateClose()">{{ 'Alumno modificado exitosamente' }}</ngb-alert>
+<ngb-alert *ngIf="showCreateSuccess" [type]="'success'" (closed)="createClose()">{{ 'Alumno creado exitosamente' }}</ngb-alert>
+<ngb-alert *ngIf="showDeleteSuccess" [type]="'success'" (closed)="deleteClose()">{{ 'Alumno borrado exitosamente' }}</ngb-alert>
 
-  </li>
-</ul> -->
 <div class="students">
   <!-- <div *ngFor="let alumno of alumnos$ | async" class="student-card"> -->
   <!-- <div *ngFor="let alumno of alumnos$ | async" >
@@ -69,3 +67,5 @@
   </table>
 
 </div>
+
+

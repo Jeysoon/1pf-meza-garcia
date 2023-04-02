@@ -11,12 +11,18 @@ import { Alumno, AlumnosService } from 'src/app/services/alumnos.service';
 })
 export class AlumnosComponent implements OnInit {
   dataSource = new MatTableDataSource<Alumno>();
+  showEditSuccess = false;
+  showCreateSuccess = false;
+  showDeleteSuccess = false;
 
   displayedColumns: string[] = ['id','nombre', 'fotografia', 'inscrito', 'experiencia', 'fechaIngreso', 'acciones'];
 
   constructor(private alumnosService: AlumnosService, private router: Router ) { }
   alumnos$!: Observable<Alumno[]>;
   ngOnInit() {
+    this.showEditSuccess = this.alumnosService.showEditSuccess;
+    this.showCreateSuccess = this.alumnosService.showCreateSuccess;
+    this.showDeleteSuccess = this.alumnosService.showDeleteSuccess;
     this.alumnos$ = this.alumnosService.traerAlumnos()
     this.alumnosService.traerAlumnos().subscribe((data) => {
       console.log('tragedia', data);
@@ -26,13 +32,29 @@ export class AlumnosComponent implements OnInit {
   onEdit(alumno: Alumno){
     const dateObj = new Date(alumno.fechaIngreso);
 const formattedDate = dateObj.toISOString().substr(0, 10);
-    this.router.navigate(['/crear'], {state: { data: {...alumno, fechaIngreso: formattedDate}}});
+    this.router.navigate(['/crear'], {state: { data: {...alumno, fechaIngreso: formattedDate}}}).then(() => {
+
+    });
       }
     onDelete(alumno: Alumno){
-    this.alumnosService.delete(alumno.id);
+    this.alumnosService.delete(alumno.id).subscribe(() => {
+      this.alumnosService.showDeleteSuccess = true;
+      this.showDeleteSuccess = this.alumnosService.showDeleteSuccess;
+
+
+
+    });
     this.alumnosService.traerAlumnos().subscribe((data) => {
-      console.log('reload', data);
     this.dataSource.data = data;
     })
+    }
+    updateClose(){
+  this.alumnosService.showEditSuccess = false;
+    }
+    createClose(){
+      this.alumnosService.showCreateSuccess = false
+    }
+    deleteClose(){
+      this.alumnosService.showDeleteSuccess = false;
     }
 }

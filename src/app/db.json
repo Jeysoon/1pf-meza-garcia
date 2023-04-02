@@ -5,7 +5,7 @@
       "apellido": "kolzcack",
       "fotografia": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/279.jpg",
       "inscrito": true,
-      "experiencia": 12,
+      "experiencia": 11,
       "fechaIngreso": "2023-03-26",
       "id": "1"
     },
@@ -405,24 +405,6 @@
       "id": "45"
     },
     {
-      "fechaIngreso": "2023-03-25T18:51:39.900Z",
-      "nombre": "Earl",
-      "apellido": "Jacobs",
-      "fotografia": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/352.jpg",
-      "inscrito": true,
-      "experiencia": "5",
-      "id": "46"
-    },
-    {
-      "nombre": "Alexis",
-      "apellido": "Haley III",
-      "fotografia": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg",
-      "inscrito": "false",
-      "experiencia": 12,
-      "fechaIngreso": "2023-03-25",
-      "id": "48"
-    },
-    {
       "nombre": "Nataly ",
       "apellido": "Russell",
       "fotografia": "https://pbs.twimg.com/profile_images/1517503065129209858/w8HZEYtG_400x400.jpg",
@@ -430,6 +412,15 @@
       "experiencia": 5,
       "fechaIngreso": "2023-04-19T00:00:00.000Z",
       "id": 5338
+    },
+    {
+      "nombre": "Regina",
+      "apellido": "Wattson",
+      "fotografia": "https://cdn.pixabay.com/photo/2013/04/11/19/46/building-102840_1280.jpg",
+      "inscrito": "true",
+      "experiencia": 57,
+      "fechaIngreso": "2023-04-13T00:00:00.000Z",
+      "id": 7508
     }
   ]
 }
