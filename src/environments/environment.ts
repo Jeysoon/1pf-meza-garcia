@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3000/students'
+  // baseUrl: 'http://localhost:3000/students'
+  baseUrl: 'https://641f4ae0f228f1a83eb42d21.mockapi.io/alumnos'
 };
 
 /*
